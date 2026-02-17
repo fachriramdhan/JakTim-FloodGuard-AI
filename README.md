@@ -1,203 +1,281 @@
 # 🌊 Jaktim FloodGuard AI
 
-**Sistem Monitoring & Deteksi Dini Banjir Wilayah Jakarta Timur Berbasis AI.**
+**AI-Based Flood Monitoring & Early Warning System for East Jakarta**
 
 ![Project Status](https://img.shields.io/badge/Status-MVP%20Ready-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 ![IDCamp](https://img.shields.io/badge/Submission-IDCamp%202025-orange?style=for-the-badge)
 
-> _"Small Apps for Big Preparedness. Stay dry, stay safe."_
+> *“Small Apps for Big Preparedness. Stay dry, stay safe.”*
 
 ---
 
-## 📋 Tentang Proyek
+## 📌 Project Overview
 
-**Jaktim FloodGuard AI** adalah solusi digital untuk kesiapsiagaan bencana yang dirancang khusus untuk memenuhi tantangan **IDCamp 2025**. Aplikasi ini memantau potensi banjir secara _real-time_ di tingkat kelurahan dengan menggunakan data cuaca presisi (Open-Meteo) dan analisis kecerdasan buatan (Google Gemini).
+**Jaktim FloodGuard AI** adalah sistem monitoring dan deteksi dini banjir berbasis kecerdasan buatan yang dirancang khusus untuk wilayah **Jakarta Timur**.
 
-Fokus utama aplikasi ini adalah memberikan informasi yang akurat, cepat, dan dapat ditindaklanjuti (_actionable_) bagi warga Jakarta Timur, dengan pendekatan desain yang _Gen-Z friendly_.
+Aplikasi ini dikembangkan untuk menjawab tantangan **IDCamp 2025**, dengan fokus pada:
 
----
+* Monitoring curah hujan per jam
+* Analisis potensi banjir berbasis aturan wilayah
+* Sistem dependensi hulu–hilir (hydrology-aware logic)
+* Asisten AI tanggap darurat
+* Desain modern dan *Gen-Z friendly*
 
-## ✨ Fitur Unggulan (Key Features)
+Sistem ini bertujuan memberikan informasi yang:
 
-### 1. 🤖 SiagaBot (AI Emergency Assistant)
-
-Asisten virtual yang siap menjawab pertanyaan darurat 24/7.
-
-- **Fungsi:** Memberikan panduan evakuasi, tips keselamatan, P3K, dan checklist tas siaga.
-- **Teknologi:** Google Gemini 3 Flash Preview.
-- **Mengapa Penting?** Mengurangi kepanikan warga dengan memberikan jawaban instan saat akses informasi resmi sulit didapat.
-
-### 2. ⚡ Real-time Early Warning System (Dependency-Aware)
-
-Sistem pendeteksi banjir cerdas yang meniru hidrologi nyata.
-
-- **Inovasi Hulu-Hilir:** Memperhitungkan ketergantungan antar wilayah.
-  - _Contoh:_ Status banjir di **Cakung Timur** (Hilir) bergantung pada kondisi di **Penggilingan** (Hulu). Jika Penggilingan aman, Cakung Timur tidak akan berstatus "BANJIR" meskipun hujan deras.
-- **Data Presisi:** Menggunakan data curah hujan per jam untuk 65 Kelurahan.
-
-### 3. 📢 One-Click Warning Share
-
-Tombol darurat untuk menyebarkan kartu peringatan dini ke WhatsApp grup keluarga/RT/RW.
-
-- **Impact:** Memastikan informasi menyebar cepat ke warga yang tidak membuka aplikasi (lansia/non-smartphone user).
-
-### 4. 🗺️ Interactive Geo-Map
-
-Visualisasi sebaran titik rawan dengan indikator warna intuitif dan zona monitoring Jakarta Timur.
+* ✅ Cepat
+* ✅ Akurat
+* ✅ Mudah dipahami
+* ✅ Actionable (bisa langsung ditindaklanjuti)
 
 ---
 
-## 🛠️ Tech Stack
+# ✨ Key Features
 
-Aplikasi ini dibangun menggunakan teknologi web modern untuk performa tinggi dan pengalaman pengguna yang responsif.
+## 1️⃣ 🤖 SiagaBot – AI Emergency Assistant
 
-| Kategori      | Teknologi                                                                                                                                                                          | Deskripsi                     |
-| :------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
-| **Frontend**  | ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=flat&logo=vite&logoColor=FFD62E) | UI Library & Build Tool       |
-| **Language**  | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)                                                                           | Strict Typing & Safety        |
-| **Styling**   | ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)                                                                      | Utility-first CSS & Dark Mode |
-| **AI Engine** | ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=flat&logo=googlebard&logoColor=white)                                                                   | GenAI SDK (`@google/genai`)   |
-| **Maps**      | ![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=flat&logo=leaflet&logoColor=white)                                                                                    | Interactive Maps              |
-| **Data**      | ![Open-Meteo](https://img.shields.io/badge/Open--Meteo-orange?style=flat)                                                                                                          | Weather API (No Key Required) |
+Asisten virtual 24/7 berbasis AI untuk membantu warga saat situasi darurat.
+
+**Fungsi utama:**
+
+* Panduan evakuasi banjir
+* Checklist tas siaga
+* Tips keselamatan keluarga
+* Pertolongan pertama (P3K)
+* Edukasi kesiapsiagaan
+
+**Teknologi:**
+
+* Google Gemini 3 Flash Preview
+* SDK: `@google/genai`
+
+**Manfaat:**
+Mengurangi kepanikan warga dengan memberikan jawaban instan saat akses informasi resmi terbatas.
 
 ---
 
-## 🔄 Alur Sistem (Flowchart)
+## 2️⃣ ⚡ Real-Time Early Warning System (Dependency-Aware)
 
-Berikut adalah diagram alir bagaimana data diproses dari API hingga menjadi status peringatan:
+Sistem deteksi banjir cerdas yang meniru pola hidrologi nyata.
+
+### 🔁 Inovasi Hulu–Hilir
+
+Sistem memperhitungkan keterkaitan antar wilayah.
+
+**Contoh:**
+
+* **Cakung Timur (Hilir)** bergantung pada kondisi **Penggilingan (Hulu)**.
+* Jika Penggilingan aman → Cakung Timur tidak bisa berstatus BANJIR.
+* Jika Penggilingan banjir → status hilir mengikuti logika asli.
+
+### 📊 Data Presisi
+
+* Curah hujan per jam
+* Monitoring 65 kelurahan Jakarta Timur
+* Perhitungan durasi hujan berturut-turut
+
+---
+
+## 3️⃣ 📢 One-Click Warning Share
+
+Tombol darurat untuk membagikan kartu peringatan banjir ke:
+
+* Grup WhatsApp keluarga
+* RT/RW
+* Tetangga sekitar
+
+**Impact:**
+Informasi tetap tersebar meskipun warga tidak membuka aplikasi.
+
+---
+
+## 4️⃣ 🗺️ Interactive Geo Map
+
+Peta interaktif berbasis Leaflet dengan:
+
+* Indikator warna status wilayah
+* Visualisasi titik rawan
+* Monitoring seluruh Jakarta Timur
+* Tampilan responsif (mobile-friendly)
+
+---
+
+# 🛠️ Tech Stack
+
+Aplikasi ini dibangun menggunakan modern web stack untuk performa tinggi dan UX optimal.
+
+| Layer       | Technology    | Purpose                           |
+| ----------- | ------------- | --------------------------------- |
+| Frontend    | React + Vite  | UI Library & Fast Build Tool      |
+| Language    | TypeScript    | Strict typing & safety            |
+| Styling     | TailwindCSS   | Utility-first styling & dark mode |
+| AI Engine   | Google Gemini | AI Response & Analysis            |
+| Maps        | Leaflet       | Interactive Map Visualization     |
+| Weather API | Open-Meteo    | Real-time Weather Data            |
+
+---
+
+# 🔄 System Flow
+
+Berikut alur pemrosesan data hingga menjadi status peringatan:
 
 ```mermaid
 graph TD
-    A[User Mengakses Web] --> B{Cek Lokasi GPS}
-    B -->|Diizinkan| C[Ambil Cuaca User]
-    B -->|Ditolak| D[Gunakan Lokasi Default]
+    A[User Access Web] --> B{Check GPS}
+    B -->|Allowed| C[Fetch User Weather]
+    B -->|Denied| D[Use Default Location]
 
-    C & D --> E[Batch Fetch Data Cuaca (65 Kelurahan)]
-    E --> F[Hitung Durasi Hujan Berturut-turut]
+    C & D --> E[Batch Fetch Weather (65 Kelurahan)]
+    E --> F[Calculate Rain Duration]
 
-    F --> G{Cek Logika Banjir}
-    G --> H{Cek Dependensi Hulu-Hilir}
+    F --> G{Check Flood Rule}
+    G --> H{Check Upstream Dependency}
 
-    H -->|Hulu Aman| I[Turunkan Status ke WASPADA]
-    H -->|Hulu Banjir| J[Gunakan Status Asli (BANJIR/SIAGA)]
-    H -->|Tidak Ada Dependensi| J
+    H -->|Upstream Safe| I[Downgrade to WASPADA]
+    H -->|Upstream Flood| J[Use Original Status]
+    H -->|No Dependency| J
 
-    I & J --> K[Render Dashboard & Peta]
+    I & J --> K[Render Dashboard & Map]
 
-    K --> L[User Klik 'Analisa AI']
-    L --> M[Kirim Data ke Google Gemini]
-    M --> N[Tampilkan Saran AI]
+    K --> L[User Click AI Analysis]
+    L --> M[Send Data to Gemini]
+    M --> N[Display AI Recommendation]
 ```
 
 ---
 
-## 📂 Struktur Folder
+# 📂 Project Structure
 
-```bash
+```
 /
-├── index.html              # Entry point aplikasi
-├── src/                    # (Root source code)
-│   ├── App.tsx             # Main Logic Controller & State Management
-│   ├── constants.ts        # DATABASE: Daftar Kelurahan & Aturan Banjir
-│   ├── types.ts            # TypeScript Interfaces
+├── index.html
+├── src/
+│   ├── App.tsx
+│   ├── constants.ts
+│   ├── types.ts
 │   ├── utils/
-│   │   └── floodLogic.ts   # 🧠 Core Algorithm: Logika penentuan status banjir
+│   │   └── floodLogic.ts
 │   ├── services/
-│   │   ├── weatherService.ts   # API Wrapper untuk Open-Meteo
-│   │   └── geminiService.ts    # API Wrapper untuk Google Gemini
+│   │   ├── weatherService.ts
+│   │   └── geminiService.ts
 │   └── components/
-│       ├── Navbar.tsx      # Navigasi & Dark Mode Toggle
-│       ├── KelurahanCard.tsx   # Komponen UI Kartu Wilayah
-│       ├── MapsView.tsx    # Komponen Peta (Leaflet)
-│       └── ChatBot.tsx     # Komponen SiagaBot
-├── .env                    # Konfigurasi API Key (Local)
-└── package.json            # Daftar Dependensi
+│       ├── Navbar.tsx
+│       ├── KelurahanCard.tsx
+│       ├── MapsView.tsx
+│       └── ChatBot.tsx
+├── .env
+└── package.json
 ```
 
 ---
 
-## ⚙️ Logika Deteksi Banjir
+# ⚙️ Flood Detection Logic
 
-Sistem menggunakan status berjenjang:
+Sistem menggunakan 4 level status:
 
-| Status         | Indikator | Kondisi Pemicu                                       |
-| :------------- | :-------- | :--------------------------------------------------- |
-| **AMAN** 🟢    | Hijau     | Tidak hujan atau hujan telah berhenti.               |
-| **WASPADA** 🟡 | Kuning    | Sedang hujan, durasi < batas kritis.                 |
-| **SIAGA** 🟠   | Oranye    | Hujan terus menerus, 1 jam lagi menuju batas kritis. |
-| **BANJIR** 🔴  | Merah     | Durasi hujan >= Batas Kritis (`durationThreshold`).  |
-
-**Contoh Kasus Dependensi:**
-
-- **Wilayah:** Cakung Timur (Hilir).
-- **Aturan:** Banjir jika hujan >= 2.5 jam **DAN** Penggilingan (Hulu) Banjir.
-- **Skenario:** Cakung Timur hujan 3 jam, tapi Penggilingan AMAN.
-- **Hasil:** Status Cakung Timur = **WASPADA** (Bukan Banjir).
+| Status     | Warna  | Kondisi                          |
+| ---------- | ------ | -------------------------------- |
+| 🟢 AMAN    | Hijau  | Tidak hujan / hujan berhenti     |
+| 🟡 WASPADA | Kuning | Hujan < batas kritis             |
+| 🟠 SIAGA   | Oranye | 1 jam menuju batas kritis        |
+| 🔴 BANJIR  | Merah  | Durasi hujan ≥ durationThreshold |
 
 ---
 
-## 🚀 Panduan Instalasi (Getting Started)
+## 📌 Contoh Kasus Dependensi
 
-Ikuti langkah ini untuk menjalankan proyek di komputer lokal (Localhost).
+**Wilayah:** Cakung Timur
+**Aturan:** Banjir jika hujan ≥ 2.5 jam DAN Penggilingan banjir
 
-### Prasyarat
+**Skenario:**
 
-- Node.js (v16+)
-- NPM / Yarn
-- API Key Google Gemini (Dapatkan gratis di [Google AI Studio](https://aistudio.google.com/))
+* Cakung Timur hujan 3 jam
+* Penggilingan AMAN
 
-### 1. Clone Repository
+**Hasil Akhir:**
+Status = 🟡 WASPADA (bukan BANJIR)
+
+Karena dependensi hulu belum terpenuhi.
+
+---
+
+# 🚀 Getting Started
+
+## 📌 Prerequisites
+
+* Node.js v16+
+* NPM atau Yarn
+* API Key Google Gemini (Gratis via Google AI Studio)
+
+---
+
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/username-anda/jaktim-floodguard-ai.git
 cd jaktim-floodguard-ai
 ```
 
-### 2. Install Dependensi
+---
+
+## 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Konfigurasi API Key
+---
 
-Karena proyek ini berjalan di sisi klien (Client-Side) untuk Hackathon, Anda bisa menyisipkan API Key langsung.
+## 3️⃣ Setup Environment Variable
 
-- **Opsi A (Environment Variable - Disarankan):**
-  Buat file `.env` di root folder:
+Buat file `.env` di root project:
 
-  ```env
-  API_KEY=masukkan_kunci_rahasia_anda_disini
-  ```
+```env
+VITE_API_KEY=your_google_gemini_api_key
+```
 
-  _Note: Pastikan bundler Anda (Vite/Webpack) mendukung inject variable ini._
+> Pastikan menggunakan prefix `VITE_` agar terbaca oleh Vite.
 
-- **Opsi B (Langsung di Kode - Hanya untuk Demo Lokal):**
-  Buka `services/geminiService.ts` dan tempel key Anda pada variabel `const apiKey`.
+---
 
-### 4. Jalankan Aplikasi
+## 4️⃣ Run Development Server
 
 ```bash
-npm start
-# atau
 npm run dev
 ```
 
-Buka browser dan akses `http://localhost:3000` (atau port yang muncul di terminal).
+Buka browser:
+
+```
+http://localhost:5173
+```
+
+(atau port yang muncul di terminal)
 
 ---
 
-## 🤝 Kontribusi
+# 🤝 Contributing
 
-Proyek ini terbuka untuk kontribusi!
+Kontribusi sangat terbuka!
 
-1.  Fork repository ini.
-2.  Buat branch fitur (`git checkout -b fitur-baru`).
-3.  Commit perubahan (`git commit -m 'Menambah fitur X'`).
-4.  Push ke branch (`git push origin fitur-baru`).
-5.  Buat Pull Request.
+1. Fork repository
+2. Buat branch baru (`git checkout -b feature/nama-fitur`)
+3. Commit perubahan (`git commit -m "Add: fitur baru"`)
+4. Push (`git push origin feature/nama-fitur`)
+5. Buat Pull Request
 
 ---
 
-**Dibuat dengan ❤️ oleh [Nama Tim/Anda] untuk IDCamp 2025.**
+# 📄 License
+
+MIT License
+
+---
+
+# ❤️ Credits
+
+Dikembangkan untuk **IDCamp 2025**
+oleh **Fachri Ramdhan Al Mubaroq**
+
+---
