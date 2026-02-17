@@ -1,281 +1,233 @@
+
 # 🌊 Jaktim FloodGuard AI
 
-**AI-Based Flood Monitoring & Early Warning System for East Jakarta**
+## AI-Powered Hyperlocal Flood Early Warning System
 
-![Project Status](https://img.shields.io/badge/Status-MVP%20Ready-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-![IDCamp](https://img.shields.io/badge/Submission-IDCamp%202025-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/MVP-Production%20Ready-success?style=for-the-badge)
+![AI](https://img.shields.io/badge/Powered%20by-Google%20Gemini-blueviolet?style=for-the-badge)
+![Region](https://img.shields.io/badge/Region-East%20Jakarta-orange?style=for-the-badge)
+![Event](https://img.shields.io/badge/IDCamp-2025-blue?style=for-the-badge)
 
-> *“Small Apps for Big Preparedness. Stay dry, stay safe.”*
-
----
-
-## 📌 Project Overview
-
-**Jaktim FloodGuard AI** adalah sistem monitoring dan deteksi dini banjir berbasis kecerdasan buatan yang dirancang khusus untuk wilayah **Jakarta Timur**.
-
-Aplikasi ini dikembangkan untuk menjawab tantangan **IDCamp 2025**, dengan fokus pada:
-
-* Monitoring curah hujan per jam
-* Analisis potensi banjir berbasis aturan wilayah
-* Sistem dependensi hulu–hilir (hydrology-aware logic)
-* Asisten AI tanggap darurat
-* Desain modern dan *Gen-Z friendly*
-
-Sistem ini bertujuan memberikan informasi yang:
-
-* ✅ Cepat
-* ✅ Akurat
-* ✅ Mudah dipahami
-* ✅ Actionable (bisa langsung ditindaklanjuti)
+> *"When floods come fast, information must come faster."*
 
 ---
 
-# ✨ Key Features
+# 🚨 Problem Statement
 
-## 1️⃣ 🤖 SiagaBot – AI Emergency Assistant
+Jakarta Timur merupakan salah satu wilayah dengan risiko banjir tinggi akibat:
 
-Asisten virtual 24/7 berbasis AI untuk membantu warga saat situasi darurat.
+* Curah hujan ekstrem
+* Sistem drainase terbatas
+* Efek limpasan hulu–hilir
+* Minimnya sistem peringatan berbasis kelurahan
 
-**Fungsi utama:**
+Sebagian besar sistem peringatan yang ada:
 
-* Panduan evakuasi banjir
+* ❌ Tidak real-time
+* ❌ Tidak spesifik per kelurahan
+* ❌ Tidak memperhitungkan dependensi wilayah
+* ❌ Tidak menyediakan panduan tindakan langsung
+
+Akibatnya, warga sering terlambat bersiap.
+
+---
+
+# 💡 Our Solution
+
+**Jaktim FloodGuard AI** adalah sistem deteksi dini banjir berbasis AI dengan pendekatan:
+
+* 🌧️ Real-time hourly rainfall monitoring
+* 🧠 AI-powered emergency assistant
+* 🔁 Dependency-aware hydrology logic
+* 📢 One-click community warning
+* 🗺️ Interactive geo-visualization
+
+Kami membangun sistem yang tidak hanya memberi tahu bahwa banjir mungkin terjadi —
+tetapi juga **apa yang harus dilakukan selanjutnya.**
+
+---
+
+# 🏗️ System Architecture Overview
+
+```
+Open-Meteo API  →  Rainfall Processor  →  Flood Logic Engine
+                                       ↓
+                              Dependency Validator
+                                       ↓
+                              Status Classification
+                                       ↓
+                 Dashboard + Map + AI Recommendation Engine
+```
+
+---
+
+# 🔥 Core Innovations
+
+## 1️⃣ Dependency-Aware Flood Logic (Hydrology Simulation)
+
+Banjir tidak terjadi secara independen.
+Wilayah hilir sangat bergantung pada kondisi wilayah hulu.
+
+### 🧠 Example:
+
+* **Penggilingan (Hulu)**
+* **Cakung Timur (Hilir)**
+
+Jika:
+
+* Cakung Timur hujan 3 jam
+* Tapi Penggilingan AMAN
+
+➡ Status Cakung Timur = **WASPADA**, bukan BANJIR.
+
+Ini mensimulasikan aliran air nyata dan mencegah false alarm.
+
+---
+
+## 2️⃣ SiagaBot – AI Emergency Assistant
+
+Powered by Google Gemini.
+
+Fungsi:
+
 * Checklist tas siaga
+* Langkah evakuasi
+* Edukasi keselamatan
+* Respons cepat berbasis konteks status wilayah
+
+Contoh:
+
+> "Status SIAGA di Cakung Timur. Apa yang harus saya lakukan?"
+
+AI memberikan:
+
+* Tindakan 1 jam ke depan
+* Rekomendasi evakuasi
 * Tips keselamatan keluarga
-* Pertolongan pertama (P3K)
-* Edukasi kesiapsiagaan
-
-**Teknologi:**
-
-* Google Gemini 3 Flash Preview
-* SDK: `@google/genai`
-
-**Manfaat:**
-Mengurangi kepanikan warga dengan memberikan jawaban instan saat akses informasi resmi terbatas.
 
 ---
 
-## 2️⃣ ⚡ Real-Time Early Warning System (Dependency-Aware)
-
-Sistem deteksi banjir cerdas yang meniru pola hidrologi nyata.
-
-### 🔁 Inovasi Hulu–Hilir
-
-Sistem memperhitungkan keterkaitan antar wilayah.
-
-**Contoh:**
-
-* **Cakung Timur (Hilir)** bergantung pada kondisi **Penggilingan (Hulu)**.
-* Jika Penggilingan aman → Cakung Timur tidak bisa berstatus BANJIR.
-* Jika Penggilingan banjir → status hilir mengikuti logika asli.
-
-### 📊 Data Presisi
+## 3️⃣ Hyperlocal Monitoring (65 Kelurahan)
 
 * Curah hujan per jam
-* Monitoring 65 kelurahan Jakarta Timur
 * Perhitungan durasi hujan berturut-turut
+* Threshold spesifik per wilayah
+* Status 4 level (AMAN → BANJIR)
 
 ---
 
-## 3️⃣ 📢 One-Click Warning Share
+## 4️⃣ One-Click WhatsApp Share
 
-Tombol darurat untuk membagikan kartu peringatan banjir ke:
+Kartu peringatan dapat langsung dibagikan ke:
 
-* Grup WhatsApp keluarga
-* RT/RW
+* Grup keluarga
+* RT / RW
 * Tetangga sekitar
 
-**Impact:**
-Informasi tetap tersebar meskipun warga tidak membuka aplikasi.
+Karena kesiapsiagaan adalah tanggung jawab bersama.
 
 ---
 
-## 4️⃣ 🗺️ Interactive Geo Map
+# 📊 Flood Classification System
 
-Peta interaktif berbasis Leaflet dengan:
-
-* Indikator warna status wilayah
-* Visualisasi titik rawan
-* Monitoring seluruh Jakarta Timur
-* Tampilan responsif (mobile-friendly)
+| Level      | Meaning | Condition                    |
+| ---------- | ------- | ---------------------------- |
+| 🟢 AMAN    | Safe    | Tidak hujan / hujan berhenti |
+| 🟡 WASPADA | Caution | Hujan < threshold            |
+| 🟠 SIAGA   | Alert   | 1 jam menuju threshold       |
+| 🔴 BANJIR  | Flood   | Rain duration ≥ threshold    |
 
 ---
 
 # 🛠️ Tech Stack
 
-Aplikasi ini dibangun menggunakan modern web stack untuk performa tinggi dan UX optimal.
+### Frontend
 
-| Layer       | Technology    | Purpose                           |
-| ----------- | ------------- | --------------------------------- |
-| Frontend    | React + Vite  | UI Library & Fast Build Tool      |
-| Language    | TypeScript    | Strict typing & safety            |
-| Styling     | TailwindCSS   | Utility-first styling & dark mode |
-| AI Engine   | Google Gemini | AI Response & Analysis            |
-| Maps        | Leaflet       | Interactive Map Visualization     |
-| Weather API | Open-Meteo    | Real-time Weather Data            |
+* React
+* Vite
+* TypeScript
+* TailwindCSS
 
----
+### AI
 
-# 🔄 System Flow
+* Google Gemini (GenAI SDK)
 
-Berikut alur pemrosesan data hingga menjadi status peringatan:
+### Weather Data
 
-```mermaid
-graph TD
-    A[User Access Web] --> B{Check GPS}
-    B -->|Allowed| C[Fetch User Weather]
-    B -->|Denied| D[Use Default Location]
+* Open-Meteo API (No API Key required)
 
-    C & D --> E[Batch Fetch Weather (65 Kelurahan)]
-    E --> F[Calculate Rain Duration]
+### Maps
 
-    F --> G{Check Flood Rule}
-    G --> H{Check Upstream Dependency}
-
-    H -->|Upstream Safe| I[Downgrade to WASPADA]
-    H -->|Upstream Flood| J[Use Original Status]
-    H -->|No Dependency| J
-
-    I & J --> K[Render Dashboard & Map]
-
-    K --> L[User Click AI Analysis]
-    L --> M[Send Data to Gemini]
-    M --> N[Display AI Recommendation]
-```
+* Leaflet.js
 
 ---
 
-# 📂 Project Structure
+# 🧠 Why This Project Matters
 
-```
-/
-├── index.html
-├── src/
-│   ├── App.tsx
-│   ├── constants.ts
-│   ├── types.ts
-│   ├── utils/
-│   │   └── floodLogic.ts
-│   ├── services/
-│   │   ├── weatherService.ts
-│   │   └── geminiService.ts
-│   └── components/
-│       ├── Navbar.tsx
-│       ├── KelurahanCard.tsx
-│       ├── MapsView.tsx
-│       └── ChatBot.tsx
-├── .env
-└── package.json
-```
+Indonesia membutuhkan:
 
----
+* Sistem peringatan dini berbasis AI
+* Informasi spesifik tingkat kelurahan
+* Integrasi data cuaca & edukasi publik
+* Akses cepat tanpa login & tanpa ribet
 
-# ⚙️ Flood Detection Logic
+Jaktim FloodGuard AI adalah langkah awal menuju:
 
-Sistem menggunakan 4 level status:
-
-| Status     | Warna  | Kondisi                          |
-| ---------- | ------ | -------------------------------- |
-| 🟢 AMAN    | Hijau  | Tidak hujan / hujan berhenti     |
-| 🟡 WASPADA | Kuning | Hujan < batas kritis             |
-| 🟠 SIAGA   | Oranye | 1 jam menuju batas kritis        |
-| 🔴 BANJIR  | Merah  | Durasi hujan ≥ durationThreshold |
-
----
-
-## 📌 Contoh Kasus Dependensi
-
-**Wilayah:** Cakung Timur
-**Aturan:** Banjir jika hujan ≥ 2.5 jam DAN Penggilingan banjir
-
-**Skenario:**
-
-* Cakung Timur hujan 3 jam
-* Penggilingan AMAN
-
-**Hasil Akhir:**
-Status = 🟡 WASPADA (bukan BANJIR)
-
-Karena dependensi hulu belum terpenuhi.
+> Smart Disaster Preparedness System
 
 ---
 
 # 🚀 Getting Started
 
-## 📌 Prerequisites
-
-* Node.js v16+
-* NPM atau Yarn
-* API Key Google Gemini (Gratis via Google AI Studio)
-
----
-
-## 1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/username-anda/jaktim-floodguard-ai.git
+git clone https://github.com/username/jaktim-floodguard-ai.git
 cd jaktim-floodguard-ai
 ```
 
----
-
-## 2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
----
+### 3️⃣ Setup Environment Variable
 
-## 3️⃣ Setup Environment Variable
-
-Buat file `.env` di root project:
+Buat file `.env`
 
 ```env
-VITE_API_KEY=your_google_gemini_api_key
+VITE_API_KEY=your_gemini_api_key
 ```
 
-> Pastikan menggunakan prefix `VITE_` agar terbaca oleh Vite.
-
----
-
-## 4️⃣ Run Development Server
+### 4️⃣ Run
 
 ```bash
 npm run dev
 ```
 
-Buka browser:
+---
 
-```
-http://localhost:5173
-```
+# 📈 Future Roadmap
 
-(atau port yang muncul di terminal)
+* 🔔 Push notification system
+* 📱 PWA mode (offline-ready)
+* 📊 Historical rainfall analytics
+* 🤝 Integration with BPBD data
+* 🛰️ IoT water-level sensor integration
+* 🧠 Machine learning flood prediction model
 
 ---
 
-# 🤝 Contributing
+# 🎯 Target Impact
 
-Kontribusi sangat terbuka!
-
-1. Fork repository
-2. Buat branch baru (`git checkout -b feature/nama-fitur`)
-3. Commit perubahan (`git commit -m "Add: fitur baru"`)
-4. Push (`git push origin feature/nama-fitur`)
-5. Buat Pull Request
+* Mengurangi kepanikan saat hujan ekstrem
+* Meningkatkan kesiapsiagaan warga
+* Mempercepat penyebaran informasi
+* Mendukung Smart City Jakarta
 
 ---
 
-# 📄 License
+# 👨‍💻 Developed By
 
-MIT License
-
----
-
-# ❤️ Credits
-
-Dikembangkan untuk **IDCamp 2025**
-oleh **Fachri Ramdhan Al Mubaroq**
-
----
+**Fachri Ramdhan Al Mubaroq**
