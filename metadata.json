@@ -1,0 +1,7 @@
+{
+  "name": "Jaktim FloodGuard AI",
+  "description": "Sistem deteksi cuaca dan prediksi banjir berbasis AI untuk wilayah Jakarta Timur dengan gaya Gen-Z.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
